@@ -10,24 +10,24 @@ import reactor.core.publisher.Mono;
 @Component
 public class SampleHandlerFunction {
 
-    public Mono<ServerResponse> flux(ServerRequest serverRequest){
+    public Mono<ServerResponse> flux(ServerRequest serverRequest) {
 
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(
-                        Flux.just(1,2,3,4).log(),Integer.class
+                        Flux.just(1, 2, 3, 4)
+                                .log(), Integer.class
                 );
-
     }
 
-    public Mono<ServerResponse> mono(ServerRequest serverRequest){
+    public Mono<ServerResponse> mono(ServerRequest serverRequest) {
 
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(
-                        Mono.just(1).log(),Integer.class
+                        Mono.just(1)
+                                .log(), Integer.class
                 );
-
     }
 
 }
